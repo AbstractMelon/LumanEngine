@@ -1,0 +1,21 @@
+body {
+    background-color: #101020;
+    color: #ffffff;
+  }
+  
+  canvas {
+    border: 1px solid #ffffff;
+  }
+  
+  .hierarchy-panel, .inspector-panel, .file-panel {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    border: 1px solid #333;
+  }
+  
+  input, button {
+    background-color: #2d2d3a;
+    color: #ffffff;
+    border: 1px solid #444;
+  }
+  
