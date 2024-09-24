@@ -3,16 +3,14 @@
       <h3>Hierarchy</h3>
       <ul>
         <li v-for="(entity, index) in entities" :key="index" @click="selectEntity(entity)">
-          {{ entity.name }}
+          {{ entity.name || 'Unnamed Entity ' + index }}
         </li>
       </ul>
     </div>
   </template>
   
   <script lang="ts">
-  import { defineComponent } from "vue";
-  
-  export default defineComponent({
+  export default {
     props: {
       entities: Array,
     },
@@ -21,7 +19,7 @@
         this.$emit('select-entity', entity);
       }
     }
-  });
+  };
   </script>
   
   <style scoped>

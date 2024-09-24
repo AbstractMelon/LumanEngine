@@ -13,17 +13,30 @@
         <label>Y Position:</label>
         <input type="number" v-model.number="selectedEntity.y" />
       </div>
+      <div>
+        <h4>Script:</h4>
+        <textarea v-model="scriptContent"></textarea>
+        <button @click="applyScript">Apply Script</button>
+      </div>
     </div>
   </template>
   
   <script lang="ts">
-  import { defineComponent } from "vue";
-  
-  export default defineComponent({
+  export default {
     props: {
       selectedEntity: Object,
     },
-  });
+    data() {
+      return {
+        scriptContent: '',
+      };
+    },
+    methods: {
+      applyScript() {
+        this.$emit('apply-script', this.scriptContent);
+      }
+    }
+  };
   </script>
   
   <style scoped>
@@ -33,6 +46,12 @@
     background-color: #1e1e2e;
     color: white;
     padding: 10px;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    background-color: #2d2d3a;
+    color: white;
   }
   </style>
   
